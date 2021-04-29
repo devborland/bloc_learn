@@ -36,7 +36,7 @@ class MyHomePage extends StatelessWidget {
             BlocBuilder<CounterBloc, int>(
               bloc: bloc,
               buildWhen: (previousState, state) {
-                return (state - previousState == 1) ? true : false;
+                return (state % 2 == 0) ? true : false;
               },
               builder: (context, state) => Text(
                 state.toString(),
